@@ -163,7 +163,7 @@ export default class Renderer {
 
     p.textSize(42);
     p.text(
-      "BREAKOUT",
+      "めちゃくちゃ頭の悪いブロック崩し",
       p.width / 2,
       p.height / 2 - 20
     );

@@ -2,7 +2,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/p5-breakout/",
+  base: "/baka-breakout/",
   build: {
     outDir: "docs",
   }
