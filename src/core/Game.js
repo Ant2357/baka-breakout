@@ -19,10 +19,12 @@ export default class Game {
    *
    * @param {p5} p p5.js インスタンス
    * @param {AudioService} audio 効果音を再生するサービス
+   * @param {BGMService} bgm BGMを再生するサービス
    */
-  constructor(p, audio) {
+  constructor(p, audio, bgm) {
     this.p = p;
     this.audio = audio;
+    this.bgm = bgm;
 
     this.state = new GameState();
 
@@ -185,6 +187,8 @@ export default class Game {
     if (this.state.title) {
       this.state.title = false;
       this.spawnBall(x, y);
+
+      this.bgm.play();
       return;
     }
 

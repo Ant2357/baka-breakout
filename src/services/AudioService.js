@@ -1,5 +1,5 @@
 /**
- * Audio を管理するサービスクラス。
+ * Audio を管理するサービスクラス(SE 用途)
  */
 export default class AudioService {
 
@@ -10,7 +10,7 @@ export default class AudioService {
    */
   constructor(bounceSEUrl) {
     /**
-     * ボール反射音の音声データです。
+     * SE の音声データです。
      *
      * @type {HTMLAudioElement}
      */
@@ -19,7 +19,7 @@ export default class AudioService {
   }
 
   /**
-   * ボールの反射音を再生します。
+   * SE を再生します。
    *
    * @returns {void}
    */
