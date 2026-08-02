@@ -18,12 +18,12 @@ export default class Game {
    * Game インスタンスを生成します。
    *
    * @param {p5} p p5.js インスタンス
-   * @param {AudioService} audio 効果音を再生するサービス
+   * @param {AudioService} bounceSE 効果音を再生するサービス
    * @param {BGMService} bgm BGMを再生するサービス
    */
-  constructor(p, audio, bgm) {
+  constructor(p, bounceSE, bgm) {
     this.p = p;
-    this.audio = audio;
+    this.bounceSE = bounceSE;
     this.bgm = bgm;
 
     this.state = new GameState();
@@ -33,7 +33,7 @@ export default class Game {
     this.collision = new CollisionService(
       p,
       this.state,
-      audio
+      bounceSE
     );
 
     this.paddle = new Paddle(

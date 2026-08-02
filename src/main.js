@@ -1,7 +1,7 @@
 import p5 from "p5";
 
 import Game from "./core/Game";
-import AudioService from "./services/AudioService";
+import SoundEffectService from "./services/SoundEffectService";
 import BGMService from "./services/BGMService";
 
 /**
@@ -25,14 +25,14 @@ new p5((p) => {
     );
 
     const soundUrl = new URL('./assets/sounds/scream.mp3', import.meta.url).href;
-    const audio = new AudioService(soundUrl);
+    const bounceSE = new SoundEffectService(soundUrl);
 
     const bgmUrl = new URL("./assets/bgms/bgm.mp3", import.meta.url).href;
     const bgm = new BGMService(bgmUrl);
 
     game = new Game(
       p,
-      audio,
+      bounceSE,
       bgm
     );
   };
