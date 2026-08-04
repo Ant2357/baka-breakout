@@ -20,9 +20,10 @@ export default class Renderer {
    *
    * @param {GameState} state ゲームの状態
    * @param {Paddle} paddle プレイヤーのパドル
+   * @param {ImpactLineEffect} impactEffect 衝突エフェクト
    * @returns {void}
    */
-  draw(state, paddle) {
+  draw(state, paddle, impactEffect) {
     const p = this.p;
 
     this.drawBackground();
@@ -30,6 +31,8 @@ export default class Renderer {
     this.drawBricks(state.bricks);
     this.drawPaddle(paddle);
     this.drawBalls(state.balls);
+
+    impactEffect.draw();
 
     if (state.title) {
       this.drawTitle();
@@ -133,16 +136,75 @@ export default class Renderer {
   drawBalls(balls) {
     const p = this.p;
 
-    p.noStroke();
-    p.fill(250);
-
     for (const ball of balls) {
+      this.drawSpeedLines(ball);
+
+      p.noStroke();
+      p.fill(250);
       p.circle(
         ball.x,
         ball.y,
         ball.radius * 2
       );
     }
+  }
+
+  /**
+   * ボールの後方へ集中線を描画します。
+   *
+   * @param {Ball} ball
+   */
+  drawSpeedLines(ball) {
+    const p = this.p;
+
+    const speed = Math.hypot(
+      ball.vx,
+      ball.vy
+    );
+
+    if (speed < 0.1) {
+      return;
+    }
+
+    // 移動方向
+    const dx = ball.vx / speed;
+    const dy = ball.vy / speed;
+
+    // 後方方向
+    const backX = -dx;
+    const backY = -dy;
+
+    p.push();
+
+    p.stroke(255, 160);
+    p.strokeWeight(2);
+    p.noFill();
+
+    const lineCount = 12;
+
+    for (let i = 0; i < lineCount; i++) {
+      // ボール周囲へばらつかせる
+      const offset = p.random(-14, 14);
+
+      const px = -dy * offset;
+      const py = dx * offset;
+
+      const length = p.random(18, 45);
+
+      const x1 = ball.x + px;
+      const y1 = ball.y + py;
+      const x2 = x1 + backX * length;
+      const y2 = y1 + backY * length;
+
+      p.line(
+        x1,
+        y1,
+        x2,
+        y2
+      );
+    }
+
+    p.pop();
   }
 
   /**

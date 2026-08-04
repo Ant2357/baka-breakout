@@ -12,11 +12,13 @@ export default class CollisionService {
    * @param {p5} p p5.js インスタンス
    * @param {GameState} state ゲームの状態
    * @param {AudioService} audio 効果音を再生するサービス
+   * @param {ImpactLineEffect} impactEffect 衝突エフェクト
    */
-  constructor(p, state, audio) {
+  constructor(p, state, audio, impactEffect) {
     this.p = p;
     this.state = state;
     this.audio = audio;
+    this.impactEffect = impactEffect;
   }
 
   /**
@@ -137,6 +139,7 @@ export default class CollisionService {
         ball.reverseY();
         ball.bounces++;
         this.audio.playBounce();
+        this.impactEffect.trigger();
         break;
       }
     }

@@ -7,6 +7,8 @@ import BrickFactory from "../factories/BrickFactory";
 import CollisionService from "../services/CollisionService";
 import Renderer from "../ui/Renderer";
 
+import ImpactLineEffect from "../effects/ImpactLineEffect";
+
 /**
  * ブロック崩しゲーム全体を管理するクラス。
  *
@@ -30,10 +32,13 @@ export default class Game {
 
     this.renderer = new Renderer(p);
 
+    this.impactEffect = new ImpactLineEffect(p);
+
     this.collision = new CollisionService(
       p,
       this.state,
-      bounceSE
+      bounceSE,
+      this.impactEffect
     );
 
     this.paddle = new Paddle(
@@ -145,6 +150,8 @@ export default class Game {
       }
     }
 
+    this.impactEffect.update();
+
     this.state.checkClear();
   }
 
@@ -156,7 +163,8 @@ export default class Game {
   draw() {
     this.renderer.draw(
       this.state,
-      this.paddle
+      this.paddle,
+      this.impactEffect
     );
   }
 
