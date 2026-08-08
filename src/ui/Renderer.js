@@ -10,6 +10,9 @@ export default class Renderer {
    */
   constructor(p) {
     this.p = p;
+
+    // Xシェアボタン
+    this.shareButton = null;
   }
 
   /**
@@ -24,9 +27,8 @@ export default class Renderer {
    * @returns {void}
    */
   draw(state, paddle, impactEffect) {
-    const p = this.p;
-
     this.drawBackground();
+
     this.drawHUD(state);
     this.drawBricks(state.bricks);
     this.drawPaddle(paddle);
@@ -41,6 +43,9 @@ export default class Renderer {
     if (state.gameOver || state.cleared) {
       this.drawResult(state);
     }
+
+    // Xシェアボタンを更新
+    this.updateShareButton(state);
   }
 
   /**
@@ -68,6 +73,7 @@ export default class Renderer {
     const p = this.p;
 
     p.fill(148, 163, 184);
+
     p.textAlign(p.LEFT, p.TOP);
     p.textSize(18);
     p.text(`SCORE: ${state.score}`, 20, 18);
@@ -115,6 +121,7 @@ export default class Renderer {
     const p = this.p;
 
     p.noStroke();
+
     p.fill(226, 232, 240);
     p.rectMode(p.CENTER);
     p.rect(
@@ -217,6 +224,7 @@ export default class Renderer {
 
     p.fill(0, 0, 0, 120);
     p.rect(0, 0, p.width, p.height);
+
     p.fill(255);
     p.textAlign(
       p.CENTER,
@@ -249,6 +257,7 @@ export default class Renderer {
 
     p.fill(0, 0, 0, 120);
     p.rect(0, 0, p.width, p.height);
+
     p.fill(255);
 
     p.textAlign(
@@ -271,5 +280,80 @@ export default class Renderer {
       p.width / 2,
       p.height / 2 + 24
     );
+  }
+
+  /**
+   * Xシェアボタンの表示状態を更新します。
+   *
+   * クリア時のみボタンを表示します。
+   *
+   * @param {GameState} state ゲームの状態
+   * @returns {void}
+   */
+  updateShareButton(state) {
+    const p = this.p;
+
+    // クリアしていない場合はボタンを非表示
+    if (!state.cleared) {
+      if (this.shareButton) {
+        this.shareButton.hide();
+      }
+
+      return;
+    }
+
+    // ボタンがまだ存在しない場合は生成
+    if (!this.shareButton) {
+      this.shareButton = p.createA(
+        "https://x.com/intent/post",
+        "𝕏 ポストでシェア"
+      );
+
+      this.shareButton.attribute("target", "_blank");
+
+      // ゲーム側のクリック処理にイベントを伝えない
+      this.shareButton.mousePressed((event) => {
+        event.stopPropagation();
+      });
+
+      // ボタン風のデザイン
+      this.shareButton.style("display", "inline-block");
+      this.shareButton.style("padding", "10px 18px");
+      this.shareButton.style("margin-top", "16px");
+      this.shareButton.style("background", "#000");
+      this.shareButton.style("color", "#fff");
+      this.shareButton.style("text-decoration", "none");
+      this.shareButton.style("border-radius", "8px");
+      this.shareButton.style("font-size", "16px");
+      this.shareButton.style("font-family", "sans-serif");
+    }
+
+    // シェアする文章
+    const text = [
+      "「めちゃくちゃ頭の悪いブロック崩し」をクリアしました！",
+      "",
+      `スコア：${state.score}`,
+      "",
+      "あなたはクリアできますか？",
+      "https://ant2357.github.io/baka-breakout/",
+      "#めちゃくちゃ頭の悪いブロック崩し"
+    ].join("\n");
+
+    const shareUrl =
+      "https://x.com/intent/post?text=" +
+      encodeURIComponent(text);
+
+    this.shareButton.attribute(
+      "href",
+      shareUrl
+    );
+
+    // ゲーム画面中央に配置
+    this.shareButton.position(
+      p.width / 2 - 80,
+      p.height / 2 + 55
+    );
+
+    this.shareButton.show();
   }
 }
