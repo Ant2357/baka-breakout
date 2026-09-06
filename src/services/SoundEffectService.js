@@ -75,7 +75,7 @@ export default class SoundEffectService {
    *
    * @returns {void}
    */
-  playBounce() {
+  play() {
     // 効果音の読み込みが完了していない場合は何もしない
     if (!this.audioBuffer) {
       return;

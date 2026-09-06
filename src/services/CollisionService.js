@@ -49,19 +49,19 @@ export default class CollisionService {
     if (ball.x < ball.radius) {
       ball.x = ball.radius;
       ball.reverseX();
-      this.audio.playBounce();
+      this.audio.play();
     }
 
     if (ball.x > this.p.width - ball.radius) {
       ball.x = this.p.width - ball.radius;
       ball.reverseX();
-      this.audio.playBounce();
+      this.audio.play();
     }
 
     if (ball.y < ball.radius) {
       ball.y = ball.radius;
       ball.reverseY();
-      this.audio.playBounce();
+      this.audio.play();
     }
 
     if (ball.y > this.p.height + 50) {
@@ -108,7 +108,7 @@ export default class CollisionService {
         ball.vy *= scale;
       }
 
-      this.audio.playBounce();
+      this.audio.play();
     }
   }
 
@@ -138,7 +138,7 @@ export default class CollisionService {
 
         ball.reverseY();
         ball.bounces++;
-        this.audio.playBounce();
+        this.audio.play();
         this.impactEffect.trigger();
         break;
       }
