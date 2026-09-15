@@ -1,0 +1,19 @@
+{
+  "source": {
+    "include": ["src"],
+    "includePattern": ".+\\.js$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "destination": "./docs/jsdoc",
+    "recurse": true,
+    "template": "node_modules/docdash"
+  },
+  "docdash": {
+    "search": true,
+    "collapse": true,
+    "typedefs": true,
+    "removeSource": false
+  }
+}

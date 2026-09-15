@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>core/GameState.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BGMService.html">BGMService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BGMService.html#pause">pause</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#resume">resume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#setVolume">setVolume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#stop">stop</a></li></ul></li><li><a href="module-Ball.html">Ball</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Ball.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseX">reverseX</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseY">reverseY</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#setVelocity">setVelocity</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#update">update</a></li></ul></li><li><a href="module-Brick.html">Brick</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Brick.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#escape">escape</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#isAlive">isAlive</a></li></ul></li><li><a href="module-BrickFactory.html">BrickFactory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BrickFactory.html#.create">create</a></li></ul></li><li><a href="module-CollisionService.html">CollisionService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handle">handle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBricks">handleBricks</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handlePaddle">handlePaddle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleWall">handleWall</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Game.html#createBricks">createBricks</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#keyPressed">keyPressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseMoved">mouseMoved</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mousePressed">mousePressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#reset">reset</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#resize">resize</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#spawnBall">spawnBall</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#update">update</a></li></ul></li><li><a href="module-GameState.html">GameState</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GameState.html#addBall">addBall</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#checkClear">checkClear</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#isPlaying">isPlaying</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#loseLife">loseLife</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBalls">removeDeadBalls</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#reset">reset</a></li></ul></li><li><a href="module-ImpactLineEffect.html">ImpactLineEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#update">update</a></li></ul></li><li><a href="module-Paddle.html">Paddle</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Paddle.html#moveTo">moveTo</a></li></ul></li><li><a href="module-Renderer.html">Renderer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Renderer.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBackground">drawBackground</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBalls">drawBalls</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBricks">drawBricks</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawHUD">drawHUD</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawPaddle">drawPaddle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawResult">drawResult</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawSpeedLines">drawSpeedLines</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawTitle">drawTitle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#updateShareButton">updateShareButton</a></li></ul></li><li><a href="module-SoundEffectService.html">SoundEffectService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#load">load</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#resumeContext">resumeContext</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">core/GameState.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * ゲーム全体の状態を管理するクラス。
+ *
+ * ボール、ブロック、スコア、ライフ、
+ * ゲームの進行状態などを保持します。
+ * 
+ * @class
+ * @exports GameState
+ */
+export default class GameState {
+  /**
+   * GameState インスタンスを生成します。
+   */
+  constructor() {
+    /**
+     * 現在存在するボールの一覧です。
+     * @type {Ball[]}
+     */
+    this.balls = [];
+
+    /**
+     * 現在配置されているブロックの一覧です。
+     * @type {Brick[]}
+     */
+    this.bricks = [];
+
+    /**
+     * 現在のスコアです。
+     * @type {number}
+     */
+    this.score = 0;
+
+    /**
+     * 残りライフ数です。
+     * @type {number}
+     */
+    this.lives = 3;
+
+    /**
+     * タイトル画面かどうかを表します。
+     * @type {boolean}
+     */
+    this.title = true;
+
+    /**
+     * ゲームオーバー状態かどうかを表します。
+     * @type {boolean}
+     */
+    this.gameOver = false;
+
+    /**
+     * ゲームクリア状態かどうかを表します。
+     * @type {boolean}
+     */
+    this.cleared = false;
+  }
+
+  /**
+   * ゲーム状態を初期状態(ゲーム開始状態)へリセットします。
+   *
+   * ボール・ブロック・スコア・ライフを初期化し、
+   * ゲームオーバーおよびクリア状態を解除します。
+   *
+   * @returns {void}
+   */
+  reset() {
+    this.balls = [];
+    this.bricks = [];
+
+    this.score = 0;
+    this.lives = 3;
+
+    this.title = false;
+    this.gameOver = false;
+    this.cleared = false;
+  }
+
+  /**
+   * ボールをゲームへ追加します。
+   *
+   * @param {Ball} ball 追加するボール
+   * @returns {void}
+   */
+  addBall(ball) {
+    this.balls.push(ball);
+  }
+
+  /**
+   * 死亡したボールをボール一覧から削除します。
+   *
+   * @returns {void}
+   */
+  removeDeadBalls() {
+    this.balls = this.balls.filter(ball => ball.alive);
+  }
+
+  /**
+   * ゲームがプレイ中かどうかを判定します。
+   *
+   * @returns {boolean}
+   * プレイ中の場合は `true`、それ以外は `false`
+   */
+  isPlaying() {
+    return !this.title &amp;&amp; !this.gameOver &amp;&amp; !this.cleared;
+  }
+
+  /**
+   * ライフを1つ減らします。
+   *
+   * ライフが0以下になった場合は
+   * ゲームオーバー状態へ移行します。
+   *
+   * @returns {void}
+   */
+  loseLife() {
+    this.lives--;
+
+    if (this.lives &lt;= 0) {
+      this.gameOver = true;
+    }
+  }
+
+  /**
+   * ゲームクリアかどうかを判定します。
+   *
+   * すべてのブロックが破壊されている場合、
+   * クリア状態へ移行します。
+   *
+   * @returns {void}
+   */
+  checkClear() {
+    this.cleared = this.bricks.every(brick => brick.hit);
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Sep 16 2026 01:33:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

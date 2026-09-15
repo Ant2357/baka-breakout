@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>core/Game.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BGMService.html">BGMService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BGMService.html#pause">pause</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#resume">resume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#setVolume">setVolume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#stop">stop</a></li></ul></li><li><a href="module-Ball.html">Ball</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Ball.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseX">reverseX</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseY">reverseY</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#setVelocity">setVelocity</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#update">update</a></li></ul></li><li><a href="module-Brick.html">Brick</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Brick.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#escape">escape</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#isAlive">isAlive</a></li></ul></li><li><a href="module-BrickFactory.html">BrickFactory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BrickFactory.html#.create">create</a></li></ul></li><li><a href="module-CollisionService.html">CollisionService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handle">handle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBricks">handleBricks</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handlePaddle">handlePaddle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleWall">handleWall</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Game.html#createBricks">createBricks</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#keyPressed">keyPressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseMoved">mouseMoved</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mousePressed">mousePressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#reset">reset</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#resize">resize</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#spawnBall">spawnBall</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#update">update</a></li></ul></li><li><a href="module-GameState.html">GameState</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GameState.html#addBall">addBall</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#checkClear">checkClear</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#isPlaying">isPlaying</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#loseLife">loseLife</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBalls">removeDeadBalls</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#reset">reset</a></li></ul></li><li><a href="module-ImpactLineEffect.html">ImpactLineEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#update">update</a></li></ul></li><li><a href="module-Paddle.html">Paddle</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Paddle.html#moveTo">moveTo</a></li></ul></li><li><a href="module-Renderer.html">Renderer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Renderer.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBackground">drawBackground</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBalls">drawBalls</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBricks">drawBricks</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawHUD">drawHUD</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawPaddle">drawPaddle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawResult">drawResult</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawSpeedLines">drawSpeedLines</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawTitle">drawTitle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#updateShareButton">updateShareButton</a></li></ul></li><li><a href="module-SoundEffectService.html">SoundEffectService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#load">load</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#resumeContext">resumeContext</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">core/Game.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import GameState from "./GameState";
+import Ball from "../entities/Ball";
+import Paddle from "../entities/Paddle";
+
+import BrickFactory from "../factories/BrickFactory";
+
+import CollisionService from "../services/CollisionService";
+import Renderer from "../ui/Renderer";
+
+import ImpactLineEffect from "../effects/ImpactLineEffect";
+
+/**
+ * ブロック崩しゲーム全体を管理するクラス。
+ *
+ * ゲーム状態、ボール・パドル・ブロックの生成、
+ * 更新処理、描画処理、入力処理を統括する。
+ * 
+ * @class
+ * @exports Game
+ */
+export default class Game {
+  /**
+   * Game インスタンスを生成します。
+   *
+   * @param {p5} p p5.js インスタンス
+   * @param {AudioService} bounceSE 効果音を再生するサービス
+   * @param {BGMService} bgm BGMを再生するサービス
+   */
+  constructor(p, bounceSE, bgm) {
+    this.p = p;
+    this.bounceSE = bounceSE;
+    this.bgm = bgm;
+
+    this.state = new GameState();
+
+    this.renderer = new Renderer(p);
+
+    this.impactEffect = new ImpactLineEffect(p);
+
+    this.collision = new CollisionService(
+      p,
+      this.state,
+      bounceSE,
+      this.impactEffect
+    );
+
+    this.paddle = new Paddle(
+      p.width / 2,
+      p.height - 44,
+      120,
+      16
+    );
+
+    this.createBricks();
+  }
+
+  /**
+   * 現在のキャンバスサイズに合わせて
+   * ブロックを生成します。
+   *
+   * @returns {void}
+   */
+  createBricks() {
+    this.state.bricks =
+      BrickFactory.create(this.p.width, 10, 5);
+  }
+
+  /**
+   * ゲームを初期状態へリセットします。
+   *
+   * ライフ・スコア・ブロックなどを初期化し、
+   * 新しいボールを生成します。
+   *
+   * @returns {void}
+   */
+  reset() {
+    this.state.reset();
+    this.createBricks();
+    this.spawnBall();
+  }
+
+  /**
+   * パドルの位置からボールを発射します。
+   *
+   * 指定した座標へ向かうように初速度を計算し、
+   * 新しいボールをゲームへ追加します。
+   *
+   * @param {number} [targetX=this.p.mouseX] 発射方向のX座標
+   * @param {number} [targetY=this.p.mouseY] 発射方向のY座標
+   * @returns {void}
+   */
+  spawnBall(targetX = this.p.mouseX, targetY = this.p.mouseY) {
+    const originX = this.paddle.x;
+    const originY = this.paddle.y - this.paddle.h / 2 - 10;
+
+    const dir = this.p.createVector(
+      targetX - originX,
+      targetY - originY
+    );
+
+    if (dir.magSq() &lt; 1) {
+      dir.set(0, -1);
+    }
+
+    dir.normalize();
+    dir.mult(8);
+
+    dir.y = Math.min(dir.y, -4);
+
+    this.state.addBall(
+      new Ball(
+        originX,
+        originY,
+        dir.x,
+        dir.y
+      )
+    );
+  }
+
+  /**
+   * ゲームを1フレーム更新します。
+   *
+   * ボールの移動、衝突判定、
+   * ライフ管理、ゲームクリア判定を行います。
+   *
+   * @returns {void}
+   */
+  update() {
+    if (!this.state.isPlaying()) {
+      return;
+    }
+
+    for (const brick of this.state.bricks) {
+      brick.escape(
+        this.state.balls,
+        this.state.bricks,
+        this.p.width
+      );
+    }
+
+    for (const ball of this.state.balls) {
+      ball.update();
+      this.collision.handle(ball, this.paddle);
+    }
+
+    this.state.removeDeadBalls();
+
+    if (this.state.balls.length === 0) {
+      this.state.loseLife();
+
+      if (!this.state.gameOver) {
+        this.spawnBall();
+      }
+    }
+
+    this.impactEffect.update();
+
+    this.state.checkClear();
+  }
+
+  /**
+   * ゲーム画面を描画します。
+   *
+   * @returns {void}
+   */
+  draw() {
+    this.renderer.draw(
+      this.state,
+      this.paddle,
+      this.impactEffect
+    );
+  }
+
+  /**
+   * マウス移動時にパドルを移動します。
+   *
+   * @param {number} x マウスのX座標
+   * @returns {void}
+   */
+  mouseMoved(x) {
+    this.paddle.moveTo(
+      x,
+      this.p.width
+    );
+  }
+
+  /**
+   * マウスクリック時の処理を行います。
+   *
+   * タイトル画面の開始、ゲームオーバー後のリセット、
+   * または新しいボールの発射を行います。
+   *
+   * @param {number} x マウスのX座標
+   * @param {number} y マウスのY座標
+   * @returns {void}
+   */
+  mousePressed(x, y) {
+    if (this.state.title) {
+      this.state.title = false;
+      this.spawnBall(x, y);
+
+      this.bgm.play();
+      return;
+    }
+
+    if (this.state.gameOver || this.state.cleared) {
+      this.reset();
+      return;
+    }
+
+    this.spawnBall(x, y);
+  }
+
+  /**
+   * キー入力時の処理を行います。
+   *
+   * Rキーが押された場合はゲームをリセットします。
+   *
+   * @param {string} key 押されたキー
+   * @returns {void}
+   */
+  keyPressed(key) {
+    if (key === "r" || key === "R") {
+      this.reset();
+    }
+  }
+
+  /**
+   * キャンバスサイズ変更時の処理を行います。
+   *
+   * キャンバスサイズを更新し、
+   * パドル位置とブロック配置を再生成します。
+   *
+   * @param {number} width 新しいキャンバス幅
+   * @param {number} height 新しいキャンバス高さ
+   * @returns {void}
+   */
+  resize(width, height) {
+    this.p.resizeCanvas(width, height);
+    this.paddle.y = height - 44;
+    this.createBricks();
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Sep 16 2026 01:33:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

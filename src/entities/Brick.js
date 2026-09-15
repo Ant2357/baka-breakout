@@ -2,6 +2,9 @@
  * ブロック崩しで使用するブロックを表すクラス。
  *
  * ブロックの位置・サイズ・色・破壊状態を管理します。
+ * 
+ * @class
+ * @exports Brick
  */
 export default class Brick {
 

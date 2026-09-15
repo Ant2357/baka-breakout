@@ -14,6 +14,9 @@ import ImpactLineEffect from "../effects/ImpactLineEffect";
  *
  * ゲーム状態、ボール・パドル・ブロックの生成、
  * 更新処理、描画処理、入力処理を統括する。
+ * 
+ * @class
+ * @exports Game
  */
 export default class Game {
   /**

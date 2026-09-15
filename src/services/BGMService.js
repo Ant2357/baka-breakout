@@ -1,5 +1,8 @@
 /**
  * BGM を管理するサービスクラス。
+ * 
+ * @class
+ * @exports BGMService
  */
 export default class BGMService {
 

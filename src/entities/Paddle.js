@@ -1,5 +1,8 @@
 /**
  * プレイヤーが操作するパドルを表すクラス。
+ * 
+ * @class
+ * @exports Paddle
  */
 export default class Paddle {
 

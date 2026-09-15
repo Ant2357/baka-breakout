@@ -1,5 +1,8 @@
 /**
  * ゲーム画面の描画を管理するクラス。
+ * 
+ * @class
+ * @exports Renderer
  */
 export default class Renderer {
 

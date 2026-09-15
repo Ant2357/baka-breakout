@@ -1,5 +1,8 @@
 /**
  * 衝突時に表示する集中線エフェクト。
+ * 
+ * @class
+ * @exports ImpactLineEffect
  */
 export default class ImpactLineEffect {
 

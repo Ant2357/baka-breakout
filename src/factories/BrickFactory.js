@@ -2,6 +2,9 @@ import Brick from "../entities/Brick";
 
 /**
  * ブロックを生成するファクトリークラス。
+ * 
+ * @class
+ * @exports BrickFactory
  */
 export default class BrickFactory {
 

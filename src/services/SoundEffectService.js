@@ -1,5 +1,8 @@
 /**
  * SoundEffect を管理するサービスクラス。
+ * 
+ * @class
+ * @exports SoundEffectService
  */
 export default class SoundEffectService {
 

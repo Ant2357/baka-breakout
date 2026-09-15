@@ -3,6 +3,9 @@
  *
  * ボールの位置・速度・半径・生存状態を管理し、
  * 移動や反射に関する基本的な操作を提供します。
+ * 
+ * @class
+ * @exports Ball
  */
 export default class Ball {
 

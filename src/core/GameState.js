@@ -3,6 +3,9 @@
  *
  * ボール、ブロック、スコア、ライフ、
  * ゲームの進行状態などを保持します。
+ * 
+ * @class
+ * @exports GameState
  */
 export default class GameState {
   /**

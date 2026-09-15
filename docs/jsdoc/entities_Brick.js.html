@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>entities/Brick.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BGMService.html">BGMService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BGMService.html#pause">pause</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#resume">resume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#setVolume">setVolume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#stop">stop</a></li></ul></li><li><a href="module-Ball.html">Ball</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Ball.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseX">reverseX</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseY">reverseY</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#setVelocity">setVelocity</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#update">update</a></li></ul></li><li><a href="module-Brick.html">Brick</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Brick.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#escape">escape</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#isAlive">isAlive</a></li></ul></li><li><a href="module-BrickFactory.html">BrickFactory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BrickFactory.html#.create">create</a></li></ul></li><li><a href="module-CollisionService.html">CollisionService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handle">handle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBricks">handleBricks</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handlePaddle">handlePaddle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleWall">handleWall</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Game.html#createBricks">createBricks</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#keyPressed">keyPressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseMoved">mouseMoved</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mousePressed">mousePressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#reset">reset</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#resize">resize</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#spawnBall">spawnBall</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#update">update</a></li></ul></li><li><a href="module-GameState.html">GameState</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GameState.html#addBall">addBall</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#checkClear">checkClear</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#isPlaying">isPlaying</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#loseLife">loseLife</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBalls">removeDeadBalls</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#reset">reset</a></li></ul></li><li><a href="module-ImpactLineEffect.html">ImpactLineEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#update">update</a></li></ul></li><li><a href="module-Paddle.html">Paddle</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Paddle.html#moveTo">moveTo</a></li></ul></li><li><a href="module-Renderer.html">Renderer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Renderer.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBackground">drawBackground</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBalls">drawBalls</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBricks">drawBricks</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawHUD">drawHUD</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawPaddle">drawPaddle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawResult">drawResult</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawSpeedLines">drawSpeedLines</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawTitle">drawTitle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#updateShareButton">updateShareButton</a></li></ul></li><li><a href="module-SoundEffectService.html">SoundEffectService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#load">load</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#resumeContext">resumeContext</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">entities/Brick.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * ブロック崩しで使用するブロックを表すクラス。
+ *
+ * ブロックの位置・サイズ・色・破壊状態を管理します。
+ * 
+ * @class
+ * @exports Brick
+ */
+export default class Brick {
+
+  /**
+   * Brick インスタンスを生成します。
+   *
+   * @param {number} x ブロックのX座標
+   * @param {number} y ブロックのY座標
+   * @param {number} homeX ブロックのホームポジションX座標
+   * @param {number} homeY ブロックのホームポジションY座標
+   * @param {number} speed ブロックの移動速度
+   * @param {number} width ブロックの幅
+   * @param {number} height ブロックの高さ
+   * @param {string} color ブロックの描画色
+   */
+  constructor(
+    x,
+    y,
+    width,
+    height,
+    color
+  ) {
+    /**
+     * ブロックのX座標です。
+     * @type {number}
+     */
+    this.x = x;
+
+    /**
+     * ブロックのY座標です。
+     * @type {number}
+     */
+    this.y = y;
+
+    /**
+     * ブロックのホームポジションX座標
+     * @type {number}
+     */
+    this.homeX = x;
+
+    /**
+     * ブロックのホームポジションY座標
+     * @type {number}
+     */
+    this.homeY = y;
+
+    /**
+     * ブロックの移動速度
+     * @type {number}
+     */
+    this.speed = 4;
+
+    /**
+     * ブロックの幅です。
+     * @type {number}
+     */
+    this.w = width;
+
+    /**
+     * ブロックの高さです。
+     * @type {number}
+     */
+    this.h = height;
+
+    /**
+     * ブロックの描画色です。
+     * @type {string}
+     */
+    this.color = color;
+
+    /**
+     * ブロックが破壊済みかどうかを表します。
+     *
+     * @type {boolean}
+     */
+    this.hit = false;
+  }
+
+  /**
+   * ブロックを破壊済み状態にします。
+   *
+   * @returns {void}
+   */
+  destroy() {
+    this.hit = true;
+  }
+
+  /**
+   * ブロックが生きているかどうかを判定します。
+   *
+   * @returns {boolean}
+   * 生きている場合は `true`、破壊済みの場合は `false`
+   */
+  isAlive() {
+    return !this.hit;
+  }
+
+  /**
+   * ボールから逃げます。
+   *
+   * @param {Ball[]} balls
+   * @param {Brick[]} bricks
+   * @param {number} canvasWidth
+   * @returns {void}
+   */
+  escape(
+    balls,
+    bricks,
+    canvasWidth
+  ) {
+    if (this.hit || balls.length === 0) {
+      return;
+    }
+
+    const centerX = this.x + this.w / 2;
+    const centerY = this.y + this.h / 2;
+
+    let moveX = 0;
+    let moveY = 0;
+
+    //--------------------------------------------------
+    // ボールから逃げる
+    //--------------------------------------------------
+
+    let nearest = null;
+    let nearestDistSq = Infinity;
+
+    for (const ball of balls) {
+      const dx = ball.x - centerX;
+      const dy = ball.y - centerY;
+      const distSq = dx * dx + dy * dy;
+
+      if (distSq &lt; nearestDistSq) {
+        nearestDistSq = distSq;
+        nearest = ball;
+      }
+    }
+
+    const ESCAPE_DISTANCE = 280;
+    if (nearestDistSq > ESCAPE_DISTANCE * ESCAPE_DISTANCE) {
+      return;
+    }
+
+    // 最も近いボールまでの距離
+    const distance = Math.sqrt(nearestDistSq);
+
+    if (nearest) {
+      const dx = centerX - nearest.x;
+      const dy = centerY - nearest.y;
+      const len = Math.hypot(dx, dy);
+
+      if (len > 0) {
+        moveX += dx / len;
+        moveY += dy / len;
+      }
+    }
+
+    //--------------------------------------------------
+    // 他ブロックと離れる
+    //--------------------------------------------------
+
+    const separateDistance = this.w;
+
+    for (const brick of bricks) {
+      if (brick === this || brick.hit) {
+        continue;
+      }
+
+      const ox = brick.x + brick.w / 2;
+      const oy = brick.y + brick.h / 2;
+
+      const dx = centerX - ox;
+      const dy = centerY - oy;
+
+      const dist = Math.hypot(dx, dy);
+
+      if (
+        dist > 0 &amp;&amp;
+        dist &lt; separateDistance
+      ) {
+        moveX +=
+          dx / dist *
+          (separateDistance - dist) /
+          separateDistance;
+
+        moveY +=
+          dy / dist *
+          (separateDistance - dist) /
+          separateDistance;
+      }
+    }
+
+    //--------------------------------------------------
+    // 元の位置へ戻ろうとする
+    //--------------------------------------------------
+
+    moveX += (this.homeX - this.x) * 0.01;
+    moveY += (this.homeY - this.y) * 0.01;
+
+    //--------------------------------------------------
+    // ボールが近いほど速く逃げる
+    //--------------------------------------------------
+
+    const MIN_SPEED = this.speed;
+    const MAX_SPEED = this.speed * 3;
+
+    const t = 1 - distance / ESCAPE_DISTANCE;
+
+    const currentSpeed =
+      MIN_SPEED +
+      (MAX_SPEED - MIN_SPEED) * t;
+
+    //--------------------------------------------------
+    // 移動
+    //--------------------------------------------------
+
+    const len = Math.hypot(moveX, moveY);
+
+    if (len > 0) {
+      this.x += moveX / len * currentSpeed;
+      this.y += moveY / len * currentSpeed;
+    }
+
+    this.x = Math.max(
+      0,
+      Math.min(canvasWidth - this.w, this.x)
+    );
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Sep 16 2026 01:33:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

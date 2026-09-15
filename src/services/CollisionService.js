@@ -3,6 +3,9 @@
  *
  * 壁・パドル・ブロックとの衝突判定を行い、
  * ゲーム状態やボールの挙動を更新します。
+ * 
+ * @class
+ * @exports CollisionService
  */
 export default class CollisionService {
 

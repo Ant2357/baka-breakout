@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>GameState - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BGMService.html">BGMService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BGMService.html#pause">pause</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#resume">resume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#setVolume">setVolume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#stop">stop</a></li></ul></li><li><a href="module-Ball.html">Ball</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Ball.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseX">reverseX</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseY">reverseY</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#setVelocity">setVelocity</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#update">update</a></li></ul></li><li><a href="module-Brick.html">Brick</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Brick.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#escape">escape</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#isAlive">isAlive</a></li></ul></li><li><a href="module-BrickFactory.html">BrickFactory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BrickFactory.html#.create">create</a></li></ul></li><li><a href="module-CollisionService.html">CollisionService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handle">handle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBricks">handleBricks</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handlePaddle">handlePaddle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleWall">handleWall</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Game.html#createBricks">createBricks</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#keyPressed">keyPressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseMoved">mouseMoved</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mousePressed">mousePressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#reset">reset</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#resize">resize</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#spawnBall">spawnBall</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#update">update</a></li></ul></li><li><a href="module-GameState.html">GameState</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GameState.html#addBall">addBall</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#checkClear">checkClear</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#isPlaying">isPlaying</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#loseLife">loseLife</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBalls">removeDeadBalls</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#reset">reset</a></li></ul></li><li><a href="module-ImpactLineEffect.html">ImpactLineEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#update">update</a></li></ul></li><li><a href="module-Paddle.html">Paddle</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Paddle.html#moveTo">moveTo</a></li></ul></li><li><a href="module-Renderer.html">Renderer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Renderer.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBackground">drawBackground</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBalls">drawBalls</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBricks">drawBricks</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawHUD">drawHUD</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawPaddle">drawPaddle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawResult">drawResult</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawSpeedLines">drawSpeedLines</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawTitle">drawTitle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#updateShareButton">updateShareButton</a></li></ul></li><li><a href="module-SoundEffectService.html">SoundEffectService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#load">load</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#resumeContext">resumeContext</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">GameState</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+                <div class="class-description"><p>ゲーム全体の状態を管理するクラス。</p>
+<p>ボール、ブロック、スコア、ライフ、
+ゲームの進行状態などを保持します。</p></div>
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>GameState インスタンスを生成します。</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>GameState インスタンスを生成します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="balls"><span class="type-signature"></span>balls<span class="type-signature"> :Array.&lt;Ball></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>現在存在するボールの一覧です。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>現在存在するボールの一覧です。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Ball></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="bricks"><span class="type-signature"></span>bricks<span class="type-signature"> :Array.&lt;Brick></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>現在配置されているブロックの一覧です。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>現在配置されているブロックの一覧です。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Brick></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="cleared"><span class="type-signature"></span>cleared<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ゲームクリア状態かどうかを表します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>ゲームクリア状態かどうかを表します。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="gameOver"><span class="type-signature"></span>gameOver<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ゲームオーバー状態かどうかを表します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>ゲームオーバー状態かどうかを表します。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="lives"><span class="type-signature"></span>lives<span class="type-signature"> :number</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>残りライフ数です。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>残りライフ数です。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="score"><span class="type-signature"></span>score<span class="type-signature"> :number</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>現在のスコアです。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>現在のスコアです。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="title"><span class="type-signature"></span>title<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>タイトル画面かどうかを表します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>タイトル画面かどうかを表します。</p>
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="addBall"><span class="type-signature"></span>addBall<span class="signature">(ball)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ボールをゲームへ追加します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line84">line 84</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ball</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Ball</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>追加するボール</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="checkClear"><span class="type-signature"></span>checkClear<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ゲームクリアかどうかを判定します。</p>
+<p>すべてのブロックが破壊されている場合、
+クリア状態へ移行します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line131">line 131</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="isPlaying"><span class="type-signature"></span>isPlaying<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ゲームがプレイ中かどうかを判定します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>プレイ中の場合は <code>true</code>、それ以外は <code>false</code></p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="loseLife"><span class="type-signature"></span>loseLife<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ライフを1つ減らします。</p>
+<p>ライフが0以下になった場合は
+ゲームオーバー状態へ移行します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line115">line 115</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="removeDeadBalls"><span class="type-signature"></span>removeDeadBalls<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>死亡したボールをボール一覧から削除します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line93">line 93</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ゲーム状態を初期状態(ゲーム開始状態)へリセットします。</p>
+<p>ボール・ブロック・スコア・ライフを初期化し、
+ゲームオーバーおよびクリア状態を解除します。</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_GameState.js.html">core/GameState.js</a>, <a href="core_GameState.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Sep 16 2026 01:33:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
