@@ -17,6 +17,13 @@ import ImpactLineEffect from "../effects/ImpactLineEffect";
  * 
  * @class
  * @exports Game
+ * @property {p5} p p5.js インスタンス
+ * @property {BGMService} bgm BGMを再生するサービス
+ * @property {GameState} state ゲームの状態
+ * @property {Renderer} renderer ゲーム画面を描画するサービス
+ * @property {ImpactLineEffect} impactEffect 衝突エフェクト
+ * @property {CollisionService} collision 衝突判定を行うサービス
+ * @property {Paddle} paddle パドル
  */
 export default class Game {
   /**
@@ -28,7 +35,6 @@ export default class Game {
    */
   constructor(p, bounceSE, bgm) {
     this.p = p;
-    this.bounceSE = bounceSE;
     this.bgm = bgm;
 
     this.state = new GameState();

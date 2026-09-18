@@ -6,6 +6,10 @@
  * 
  * @class
  * @exports CollisionService
+ * @property {p5} p p5.js インスタンス
+ * @property {GameState} state ゲームの状態
+ * @property {AudioService} audio 効果音を再生するサービス
+ * @property {ImpactLineEffect} impactEffect 衝突エフェクト
  */
 export default class CollisionService {
 

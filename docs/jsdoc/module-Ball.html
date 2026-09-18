@@ -82,7 +82,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line10">line 10</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -116,6 +116,289 @@
 
     
 </dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールのX座標</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールのY座標</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールのX方向の速度</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールのY方向の速度</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>8</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールの半径</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alive</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>true</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールが生存状態</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bounces</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>ブロックと衝突した回数</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -187,7 +470,7 @@
                 </td>
             
 
-            <td class="description last"><p>初期X座標</p></td>
+            <td class="description last"><p>ボールのX座標</p></td>
         </tr>
 
     
@@ -223,7 +506,7 @@
                 </td>
             
 
-            <td class="description last"><p>初期Y座標</p></td>
+            <td class="description last"><p>ボールのY座標</p></td>
         </tr>
 
     
@@ -259,7 +542,7 @@
                 </td>
             
 
-            <td class="description last"><p>X方向の速度</p></td>
+            <td class="description last"><p>ボールのX方向の速度</p></td>
         </tr>
 
     
@@ -295,7 +578,7 @@
                 </td>
             
 
-            <td class="description last"><p>Y方向の速度</p></td>
+            <td class="description last"><p>ボールのY方向の速度</p></td>
         </tr>
 
     
@@ -339,6 +622,86 @@
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>alive</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>true</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>ボールが生存状態</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bounces</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>ブロックと衝突した回数</p></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -378,556 +741,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="alive"><span class="type-signature"></span>alive<span class="type-signature"> :boolean</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>ボールが有効かどうかを表します。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>ボールが有効かどうかを表します。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">boolean</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="bounces"><span class="type-signature"></span>bounces<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>ブロックと衝突した回数です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line62">line 62</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>ブロックと衝突した回数です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="radius"><span class="type-signature"></span>radius<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>ボールの半径です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line50">line 50</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>ボールの半径です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="vx"><span class="type-signature"></span>vx<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>X方向の速度です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line38">line 38</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>X方向の速度です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="vy"><span class="type-signature"></span>vy<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Y方向の速度です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line44">line 44</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Y方向の速度です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="x"><span class="type-signature"></span>x<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>ボールのX座標です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>ボールのX座標です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="y"><span class="type-signature"></span>y<span class="type-signature"> :number</span></h4>
-
-
-
-
-
-<dl class="details">
-    
-    <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>ボールのY座標です。</p></li></ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line32">line 32</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>ボールのY座標です。</p>
-</div>
-
-
-
-    <h5 class="h5-types">Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">number</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -953,7 +766,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line110">line 110</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -1057,7 +870,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line92">line 92</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -1161,7 +974,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line101">line 101</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -1265,7 +1078,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line82">line 82</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -1443,7 +1256,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line70">line 70</a>
+        <a href="entities_Ball.js.html">entities/Ball.js</a>, <a href="entities_Ball.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -1546,7 +1359,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Sep 16 2026 01:33:24 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Fri Sep 18 2026 19:13:15 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -5,6 +5,15 @@
  * 
  * @class
  * @exports Brick
+ * @property {number} x ブロックのX座標
+ * @property {number} y ブロックのY座標
+ * @property {number} homeX ブロックのホームポジションX座標(ブロック生成時のX座標)
+ * @property {number} homeY ブロックのホームポジションY座標(ブロック生成時のY座標)
+ * @property {number} speed ブロックの移動速度(speed 4 固定)
+ * @property {number} w ブロックの幅
+ * @property {number} h ブロックの高さ
+ * @property {string} color ブロックの描画色
+ * @property {boolean} hit ブロックが破壊済みかどうか
  */
 export default class Brick {
 
@@ -13,9 +22,6 @@ export default class Brick {
    *
    * @param {number} x ブロックのX座標
    * @param {number} y ブロックのY座標
-   * @param {number} homeX ブロックのホームポジションX座標
-   * @param {number} homeY ブロックのホームポジションY座標
-   * @param {number} speed ブロックの移動速度
    * @param {number} width ブロックの幅
    * @param {number} height ブロックの高さ
    * @param {string} color ブロックの描画色
@@ -27,59 +33,14 @@ export default class Brick {
     height,
     color
   ) {
-    /**
-     * ブロックのX座標です。
-     * @type {number}
-     */
     this.x = x;
-
-    /**
-     * ブロックのY座標です。
-     * @type {number}
-     */
     this.y = y;
-
-    /**
-     * ブロックのホームポジションX座標
-     * @type {number}
-     */
     this.homeX = x;
-
-    /**
-     * ブロックのホームポジションY座標
-     * @type {number}
-     */
     this.homeY = y;
-
-    /**
-     * ブロックの移動速度
-     * @type {number}
-     */
     this.speed = 4;
-
-    /**
-     * ブロックの幅です。
-     * @type {number}
-     */
     this.w = width;
-
-    /**
-     * ブロックの高さです。
-     * @type {number}
-     */
     this.h = height;
-
-    /**
-     * ブロックの描画色です。
-     * @type {string}
-     */
     this.color = color;
-
-    /**
-     * ブロックが破壊済みかどうかを表します。
-     *
-     * @type {boolean}
-     */
     this.hit = false;
   }
 

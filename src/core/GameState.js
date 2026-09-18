@@ -6,52 +6,25 @@
  * 
  * @class
  * @exports GameState
+ * @property {Ball[]} balls ボールの一覧
+ * @property {Brick[]} bricks ブロックの一覧
+ * @property {number} score 現在のスコア
+ * @property {number} lives 残りライフ数
+ * @property {boolean} title 現在タイトル画面かどうか
+ * @property {boolean} gameOver ゲームオーバー状態かどうか
+ * @property {boolean} cleared ゲームクリア状態かどうか
  */
 export default class GameState {
   /**
    * GameState インスタンスを生成します。
    */
   constructor() {
-    /**
-     * 現在存在するボールの一覧です。
-     * @type {Ball[]}
-     */
     this.balls = [];
-
-    /**
-     * 現在配置されているブロックの一覧です。
-     * @type {Brick[]}
-     */
     this.bricks = [];
-
-    /**
-     * 現在のスコアです。
-     * @type {number}
-     */
     this.score = 0;
-
-    /**
-     * 残りライフ数です。
-     * @type {number}
-     */
     this.lives = 3;
-
-    /**
-     * タイトル画面かどうかを表します。
-     * @type {boolean}
-     */
     this.title = true;
-
-    /**
-     * ゲームオーバー状態かどうかを表します。
-     * @type {boolean}
-     */
     this.gameOver = false;
-
-    /**
-     * ゲームクリア状態かどうかを表します。
-     * @type {boolean}
-     */
     this.cleared = false;
   }
 

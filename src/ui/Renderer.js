@@ -3,6 +3,8 @@
  * 
  * @class
  * @exports Renderer
+ * @property {p5} p p5.js インスタンス
+ * @property {p5.Element} shareButton Xシェアボタン
  */
 export default class Renderer {
 

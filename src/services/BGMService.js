@@ -3,6 +3,7 @@
  * 
  * @class
  * @exports BGMService
+ * @property {HTMLAudioElement} audio BGMオーディオ要素
  */
 export default class BGMService {
 
@@ -12,12 +13,6 @@ export default class BGMService {
    * @param {string} bgmUrl BGMのURL
    */
   constructor(bgmUrl) {
-
-    /**
-     * BGM
-     *
-     * @type {HTMLAudioElement}
-     */
     this.audio = new Audio(bgmUrl);
 
     this.audio.preload = "auto";

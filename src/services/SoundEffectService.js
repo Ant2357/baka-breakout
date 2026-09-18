@@ -3,6 +3,9 @@
  * 
  * @class
  * @exports SoundEffectService
+ * @property {AudioContext} audioContext Web Audio API の AudioContext
+ * @property {AudioBuffer|null} audioBuffer 効果音の音声データ
+ * @property {number} volume 効果音の音量
  */
 export default class SoundEffectService {
 
@@ -12,28 +15,12 @@ export default class SoundEffectService {
    * @param {string} soundEffectUrl 音声ファイルの URL
    */
   constructor(soundEffectUrl) {
-
-    /**
-     * Web Audio API の AudioContext
-     *
-     * @type {AudioContext}
-     */
     this.audioContext = new (
       window.AudioContext || window.webkitAudioContext
     )();
 
-    /**
-     * 効果音の音声データ。
-     *
-     * @type {AudioBuffer|null}
-     */
     this.audioBuffer = null;
 
-    /**
-     * 効果音の音量。
-     *
-     * @type {number}
-     */
     this.volume = 0.5;
 
     /**

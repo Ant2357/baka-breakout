@@ -6,60 +6,35 @@
  * 
  * @class
  * @exports Ball
+ * @property {number} x ボールのX座標
+ * @property {number} y ボールのY座標
+ * @property {number} vx ボールのX方向の速度
+ * @property {number} vy ボールのY方向の速度
+ * @property {number} [radius=8] ボールの半径
+ * @property {boolean} [alive=true] ボールが生存状態
+ * @property {number} [bounces=0] ブロックと衝突した回数
  */
 export default class Ball {
 
   /**
    * Ball インスタンスを生成します。
    *
-   * @param {number} x 初期X座標
-   * @param {number} y 初期Y座標
-   * @param {number} vx X方向の速度
-   * @param {number} vy Y方向の速度
+   * @param {number} x ボールのX座標
+   * @param {number} y ボールのY座標
+   * @param {number} vx ボールのX方向の速度
+   * @param {number} vy ボールのY方向の速度
    * @param {number} [radius=8] ボールの半径
+   * @param {boolean} [alive=true] ボールが生存状態
+   * @param {number} [bounces=0] ブロックと衝突した回数
    */
-  constructor(x, y, vx, vy, radius = 8) {
-    /**
-     * ボールのX座標です。
-     * @type {number}
-     */
+  constructor(x, y, vx, vy, radius = 8, alive = true, bounces = 0) {
     this.x = x;
-
-    /**
-     * ボールのY座標です。
-     * @type {number}
-     */
     this.y = y;
-
-    /**
-     * X方向の速度です。
-     * @type {number}
-     */
     this.vx = vx;
-
-    /**
-     * Y方向の速度です。
-     * @type {number}
-     */
     this.vy = vy;
-
-    /**
-     * ボールの半径です。
-     * @type {number}
-     */
     this.radius = radius;
-
-    /**
-     * ボールが有効かどうかを表します。
-     * @type {boolean}
-     */
-    this.alive = true;
-
-    /**
-     * ブロックと衝突した回数です。
-     * @type {number}
-     */
-    this.bounces = 0;
+    this.alive = alive;
+    this.bounces = bounces;
   }
 
   /**

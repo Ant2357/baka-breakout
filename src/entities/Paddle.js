@@ -3,6 +3,10 @@
  * 
  * @class
  * @exports Paddle
+ * @property {number} x パドルのX座標
+ * @property {number} y パドルのY座標
+ * @property {number} w パドルの幅
+ * @property {number} h パドルの高さ
  */
 export default class Paddle {
 

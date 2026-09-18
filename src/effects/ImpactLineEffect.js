@@ -3,11 +3,16 @@
  * 
  * @class
  * @exports ImpactLineEffect
+ * @property {p5} p p5.js インスタンス
+ * @property {number} timer タイマー
+ * @property {number} duration エフェクトの持続時間
  */
 export default class ImpactLineEffect {
 
   /**
-   * @param {p5} p
+   * ImpactLineEffect インスタンスを生成します。
+   * 
+   * @param {p5} p p5.js インスタンス
    */
   constructor(p) {
     this.p = p;
