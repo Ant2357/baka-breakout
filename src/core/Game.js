@@ -27,7 +27,7 @@ import ImpactLineEffect from "../effects/ImpactLineEffect";
  */
 export default class Game {
   /**
-   * Game インスタンスを生成します。
+   * Game Constructor
    *
    * @param {p5} p p5.js インスタンス
    * @param {AudioService} bounceSE 効果音を再生するサービス

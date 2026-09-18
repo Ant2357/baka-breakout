@@ -10,7 +10,7 @@
 export default class ImpactLineEffect {
 
   /**
-   * ImpactLineEffect インスタンスを生成します。
+   * ImpactLineEffect Constructor
    * 
    * @param {p5} p p5.js インスタンス
    */

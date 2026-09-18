@@ -8,7 +8,7 @@
 export default class BGMService {
 
   /**
-   * BGMService インスタンスを生成します。
+   * BGMService Constructor
    *
    * @param {string} bgmUrl BGMのURL
    */

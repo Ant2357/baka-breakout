@@ -18,7 +18,7 @@
 export default class Brick {
 
   /**
-   * Brick インスタンスを生成します。
+   * Brick Constructor
    *
    * @param {number} x ブロックのX座標
    * @param {number} y ブロックのY座標

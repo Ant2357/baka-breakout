@@ -10,7 +10,7 @@
 export default class SoundEffectService {
 
   /**
-   * SoundEffectService インスタンスを生成します。
+   * SoundEffectService Constructor
    *
    * @param {string} soundEffectUrl 音声ファイルの URL
    */

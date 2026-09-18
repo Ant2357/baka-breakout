@@ -11,7 +11,7 @@
 export default class Paddle {
 
   /**
-   * Paddle インスタンスを生成します。
+   * Paddle Constructor
    *
    * @param {number} x パドルの初期X座標
    * @param {number} y パドルの初期Y座標

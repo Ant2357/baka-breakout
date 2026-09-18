@@ -9,7 +9,7 @@
 export default class Renderer {
 
   /**
-   * Renderer インスタンスを生成します。
+   * Renderer Constructor
    *
    * @param {p5} p p5.js インスタンス
    */

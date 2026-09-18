@@ -17,7 +17,7 @@
 export default class Ball {
 
   /**
-   * Ball インスタンスを生成します。
+   * Ball Constructor
    *
    * @param {number} x ボールのX座標
    * @param {number} y ボールのY座標

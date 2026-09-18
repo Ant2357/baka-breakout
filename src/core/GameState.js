@@ -16,7 +16,7 @@
  */
 export default class GameState {
   /**
-   * GameState インスタンスを生成します。
+   * GameState Constructor
    */
   constructor() {
     this.balls = [];

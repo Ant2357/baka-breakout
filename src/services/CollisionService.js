@@ -14,7 +14,7 @@
 export default class CollisionService {
 
   /**
-   * CollisionService インスタンスを生成します。
+   * CollisionService Constructor
    *
    * @param {p5} p p5.js インスタンス
    * @param {GameState} state ゲームの状態
