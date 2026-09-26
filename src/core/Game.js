@@ -123,18 +123,53 @@ export default class Game {
     );
   }
 
+
+  /**
+   * キー入力状態をチェックし、パドルを移動させます。
+   * 
+   * @returns {void}
+   */
+  handleInput() {
+    let dx = 0;
+    let dy = 0;
+
+    // 左移動 (A または 左矢印)
+    if (this.p.keyIsDown(65) || this.p.keyIsDown(this.p.LEFT_ARROW)) {
+      dx -= 1;
+    }
+    // 右移動 (D または 右矢印)
+    if (this.p.keyIsDown(68) || this.p.keyIsDown(this.p.RIGHT_ARROW)) {
+      dx += 1;
+    }
+    // 上移動 (W または 上矢印)
+    if (this.p.keyIsDown(87) || this.p.keyIsDown(this.p.UP_ARROW)) {
+      dy -= 1;
+    }
+    // 下移動 (S または 下矢印)
+    if (this.p.keyIsDown(83) || this.p.keyIsDown(this.p.DOWN_ARROW)) {
+      dy += 1;
+    }
+
+    // 斜め移動時に移動速度が速くなりすぎないよう正規化
+    if (dx !== 0 || dy !== 0) {
+      this.paddle.move(dx, dy, this.p.width, this.p.height);
+    }
+  }
+
   /**
    * ゲームを1フレーム更新します。
    *
    * ボールの移動、衝突判定、
-   * ライフ管理、ゲームクリア判定を行います。
-   *
+   * ライフ管理、ゲームクリア判定などを行います。
    * @returns {void}
    */
   update() {
     if (!this.state.isPlaying()) {
       return;
     }
+
+    // パドルのキー入力を反映
+    this.handleInput();
 
     for (const brick of this.state.bricks) {
       brick.escape(
