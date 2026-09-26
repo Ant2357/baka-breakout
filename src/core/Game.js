@@ -24,6 +24,7 @@ import ImpactLineEffect from "../effects/ImpactLineEffect";
  * @property {ImpactLineEffect} impactEffect 衝突エフェクト
  * @property {CollisionService} collision 衝突判定を行うサービス
  * @property {Paddle} paddle パドル
+ * @property {boolean} isKeyboardUsed キーボード入力が使用されているかどうか
  */
 export default class Game {
   /**
@@ -57,6 +58,8 @@ export default class Game {
       16
     );
 
+    this.isKeyboardUsed = false;
+
     this.createBricks();
   }
 
@@ -83,6 +86,8 @@ export default class Game {
     this.state.reset();
     this.createBricks();
     this.spawnBall();
+
+    this.isKeyboardUsed = false;
   }
 
   /**
@@ -133,21 +138,33 @@ export default class Game {
     let dx = 0;
     let dy = 0;
 
+    // いずれかの移動キーが押されたかを判定
+    let isKeyPressed = false;
+
     // 左移動 (A または 左矢印)
     if (this.p.keyIsDown(65) || this.p.keyIsDown(this.p.LEFT_ARROW)) {
       dx -= 1;
+      isKeyPressed = true;
     }
     // 右移動 (D または 右矢印)
     if (this.p.keyIsDown(68) || this.p.keyIsDown(this.p.RIGHT_ARROW)) {
       dx += 1;
+      isKeyPressed = true;
     }
     // 上移動 (W または 上矢印)
     if (this.p.keyIsDown(87) || this.p.keyIsDown(this.p.UP_ARROW)) {
       dy -= 1;
+      isKeyPressed = true;
     }
     // 下移動 (S または 下矢印)
     if (this.p.keyIsDown(83) || this.p.keyIsDown(this.p.DOWN_ARROW)) {
       dy += 1;
+      isKeyPressed = true;
+    }
+
+    // 一度でもキーが押されたらキーボードフラグをオンにする
+    if (isKeyPressed) {
+      this.isKeyboardUsed = true;
     }
 
     // 斜め移動時に移動速度が速くなりすぎないよう正規化
@@ -219,6 +236,10 @@ export default class Game {
    * @returns {void}
    */
   mouseMoved(x) {
+    if (this.isKeyboardUsed) {
+      return;
+    }
+
     this.paddle.moveTo(
       x,
       this.p.width
