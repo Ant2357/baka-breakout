@@ -8,6 +8,7 @@ import CollisionService from "../services/CollisionService";
 import Renderer from "../ui/Renderer";
 
 import ImpactLineEffect from "../effects/ImpactLineEffect";
+import MasterSpark from "../effects/MasterSpark";
 
 /**
  * ブロック崩しゲーム全体を管理するクラス。
@@ -43,6 +44,8 @@ export default class Game {
     this.renderer = new Renderer(p);
 
     this.impactEffect = new ImpactLineEffect(p);
+
+    this.masterSpark = new MasterSpark(p, bounceSE);
 
     this.collision = new CollisionService(
       p,
@@ -188,6 +191,13 @@ export default class Game {
     // パドルのキー入力を反映
     this.handleInput();
 
+    this.masterSpark.update(
+      this.paddle.x,
+      this.paddle.y,
+      this.state,
+      this.impactEffect
+    );
+
     for (const brick of this.state.bricks) {
       brick.escape(
         this.state.balls,
@@ -227,6 +237,8 @@ export default class Game {
       this.paddle,
       this.impactEffect
     );
+
+    this.masterSpark.draw();
   }
 
   /**
@@ -284,6 +296,10 @@ export default class Game {
   keyPressed(key) {
     if (key === "r" || key === "R") {
       this.reset();
+    }
+
+    if ((key === "m" || key === "M") && this.state.isPlaying()) {
+      this.masterSpark.trigger(this.paddle.x, this.paddle.y);
     }
   }
 
