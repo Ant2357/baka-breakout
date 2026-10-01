@@ -83,10 +83,16 @@ export default class Renderer {
     p.textSize(18);
     p.text(`SCORE: ${state.score}`, 20, 18);
     p.text(`LIVES: ${state.lives}`, 20, 42);
-    p.text(
+
+    const text = [
       "クリックでボール発射 / Rでリスタート",
+      "Mキーでめっちゃ凄いレーザービーム発射",
+    ].join("\n");
+
+    p.text(
+      text,
       20,
-      p.height - 32
+      p.height - 60
     );
   }
 
