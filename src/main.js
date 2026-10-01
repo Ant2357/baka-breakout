@@ -24,16 +24,20 @@ new p5((p) => {
       p.windowHeight
     );
 
-    const soundUrl = new URL('./assets/sounds/scream.mp3', import.meta.url).href;
-    const bounceSE = new SoundEffectService(soundUrl);
+    const screamUrl = new URL('./assets/sounds/scream.mp3', import.meta.url).href;
+    const screamSE = new SoundEffectService(screamUrl);
+
+    const masterSparkUrl = new URL('./assets/sounds/master-spark.mp3', import.meta.url).href;
+    const masterSparkSE = new SoundEffectService(masterSparkUrl);
 
     const bgmUrl = new URL("./assets/bgms/bgm.mp3", import.meta.url).href;
     const bgm = new BGMService(bgmUrl);
 
     game = new Game(
       p,
-      bounceSE,
-      bgm
+      bgm,
+      screamSE,
+      masterSparkSE
     );
   };
 

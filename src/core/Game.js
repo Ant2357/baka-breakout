@@ -32,10 +32,11 @@ export default class Game {
    * Game Constructor
    *
    * @param {p5} p p5.js インスタンス
-   * @param {AudioService} bounceSE 効果音を再生するサービス
    * @param {BGMService} bgm BGMを再生するサービス
+   * @param {AudioService} screamSE 悲鳴の効果音を再生するサービス
+   * @param {AudioService} masterSparkSE マスタースパークの効果音を再生するサービス
    */
-  constructor(p, bounceSE, bgm) {
+  constructor(p, bgm, screamSE, masterSparkSE) {
     this.p = p;
     this.bgm = bgm;
 
@@ -45,12 +46,12 @@ export default class Game {
 
     this.impactEffect = new ImpactLineEffect(p);
 
-    this.masterSpark = new MasterSpark(p, bounceSE);
+    this.masterSpark = new MasterSpark(p, masterSparkSE, screamSE);
 
     this.collision = new CollisionService(
       p,
       this.state,
-      bounceSE,
+      screamSE,
       this.impactEffect
     );
 

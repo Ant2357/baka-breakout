@@ -16,14 +16,17 @@
 export default class MasterSpark {
   /**
    * @param {p5} p p5.js インスタンス
+   * @param {AudioService} masterSparkSE マスタースパークの効果音を再生するサービス
+   * @param {AudioService} killBrickSE ブロック破壊時の効果音を再生するサービス 
    */
-  constructor(p, audio) {
+  constructor(p, masterSparkSE, killBrickSE) {
     this.p = p;
-    this.audio = audio;
+    this.masterSparkSE = masterSparkSE;
+    this.killBrickSE = killBrickSE;
+
     this.active = false;
     this.duration = 60; // 照射フレーム数 (約1秒)
     this.currentFrame = 0;
-
     this.x = 0;
     this.y = 0;
     this.beamWidth = 35; // ビームの極太幅 (px)
@@ -42,6 +45,10 @@ export default class MasterSpark {
     this.currentFrame = this.duration;
     this.x = x;
     this.y = y;
+
+    if (this.masterSparkSE) {
+      this.masterSparkSE.play();
+    }
 
     // 星エフェクトの初期化
     this.stars = [];
@@ -97,8 +104,8 @@ export default class MasterSpark {
         brick.destroy();
         state.score += 10;
 
-        if (this.audio) {
-          this.audio.play();
+        if (this.killBrickSE) {
+          this.killBrickSE.play();
         }
 
         // destroyedInThisFrame++;
@@ -107,10 +114,6 @@ export default class MasterSpark {
         }
       }
     }
-
-    // if (destroyedInThisFrame > 0 && this.audio) {
-    //   this.audio.play();
-    // }
 
     // 星エフェクトの更新
     for (const star of this.stars) {
