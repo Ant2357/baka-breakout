@@ -8,7 +8,7 @@
  * @exports CollisionService
  * @property {p5} p p5.js インスタンス
  * @property {GameState} state ゲームの状態
- * @property {AudioService} audio 効果音を再生するサービス
+ * @property {SoundEffectService} audio 効果音を再生するサービス
  * @property {ImpactLineEffect} impactEffect 衝突エフェクト
  */
 export default class CollisionService {
@@ -18,7 +18,7 @@ export default class CollisionService {
    *
    * @param {p5} p p5.js インスタンス
    * @param {GameState} state ゲームの状態
-   * @param {AudioService} audio 効果音を再生するサービス
+   * @param {SoundEffectService} audio 効果音を再生するサービス
    * @param {ImpactLineEffect} impactEffect 衝突エフェクト
    */
   constructor(p, state, audio, impactEffect) {

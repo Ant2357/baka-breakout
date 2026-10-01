@@ -33,8 +33,8 @@ export default class Game {
    *
    * @param {p5} p p5.js インスタンス
    * @param {BGMService} bgm BGMを再生するサービス
-   * @param {AudioService} screamSE 悲鳴の効果音を再生するサービス
-   * @param {AudioService} masterSparkSE マスタースパークの効果音を再生するサービス
+   * @param {SoundEffectService} screamSE 悲鳴の効果音を再生するサービス
+   * @param {SoundEffectService} masterSparkSE マスタースパークの効果音を再生するサービス
    */
   constructor(p, bgm, screamSE, masterSparkSE) {
     this.p = p;
