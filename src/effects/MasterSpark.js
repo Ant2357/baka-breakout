@@ -1,10 +1,11 @@
 /**
- * 霧雨魔理沙の「マスタースパーク」エフェクト・攻撃処理クラス
+ * 霧雨魔理沙の「マスタースパーク」エフェクト・攻撃処理クラス。
  * 
  * @class
  * @exports MasterSpark
  * @property {p5} p p5.js インスタンス
- * @property {AudioService} audio 効果音を再生するサービス
+ * @property {SoundEffectService} masterSparkSE 効果音を再生するサービス
+ * @property {SoundEffectService} killBrickSE ブロック破壊時の効果音を再生するサービス
  * @property {boolean} active マスタースパークが発射中かどうか
  * @property {number} duration 照射フレーム数 (約1秒)
  * @property {number} currentFrame 現在のフレーム数
@@ -15,9 +16,11 @@
  */
 export default class MasterSpark {
   /**
+   * MasterSpark Constructor
+   * 
    * @param {p5} p p5.js インスタンス
-   * @param {AudioService} masterSparkSE マスタースパークの効果音を再生するサービス
-   * @param {AudioService} killBrickSE ブロック破壊時の効果音を再生するサービス 
+   * @param {SoundEffectService} masterSparkSE マスタースパークの効果音を再生するサービス
+   * @param {SoundEffectService} killBrickSE ブロック破壊時の効果音を再生するサービス
    */
   constructor(p, masterSparkSE, killBrickSE) {
     this.p = p;
@@ -86,8 +89,6 @@ export default class MasterSpark {
     // ビーム領域内のブロックを破壊
     const leftX = this.x - this.beamWidth / 2;
     const rightX = this.x + this.beamWidth / 2;
-
-    // let destroyedInThisFrame = 0;
 
     for (const brick of state.bricks) {
       if (brick.hit) continue;
