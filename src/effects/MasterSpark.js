@@ -1,11 +1,10 @@
 /**
- * 霧雨魔理沙の「マスタースパーク」エフェクト・攻撃処理クラス。
+ * 霧雨魔理沙の「マスタースパーク」エフェクト。
  * 
  * @class
  * @exports MasterSpark
  * @property {p5} p p5.js インスタンス
  * @property {SoundEffectService} masterSparkSE 効果音を再生するサービス
- * @property {SoundEffectService} killBrickSE ブロック破壊時の効果音を再生するサービス
  * @property {boolean} active マスタースパークが発射中かどうか
  * @property {number} duration 照射フレーム数 (約1秒)
  * @property {number} currentFrame 現在のフレーム数
@@ -19,13 +18,11 @@ export default class MasterSpark {
    * MasterSpark Constructor
    * 
    * @param {p5} p p5.js インスタンス
-   * @param {SoundEffectService} masterSparkSE マスタースパークの効果音を再生するサービス
-   * @param {SoundEffectService} killBrickSE ブロック破壊時の効果音を再生するサービス
+   * @param {SoundEffectService} masterSparkSE マスタースパークの発射効果音サービス
    */
-  constructor(p, masterSparkSE, killBrickSE) {
+  constructor(p, masterSparkSE) {
     this.p = p;
     this.masterSparkSE = masterSparkSE;
-    this.killBrickSE = killBrickSE;
 
     this.active = false;
     this.duration = 60; // 照射フレーム数 (約1秒)
@@ -67,13 +64,11 @@ export default class MasterSpark {
   }
 
   /**
-   * パドルの移動に合わせて位置を更新し、衝突判定とタイマー処理を行います
+   * パドルの移動に合わせて位置を更新し、タイマー処理と星エフェクトの移動を行います
    * @param {number} paddleX 現在のパドルX座標
    * @param {number} paddleY 現在のパドルY座標
-   * @param {GameState} state ゲーム状態
-   * @param {ImpactLineEffect} impactEffect 衝突エフェクト
    */
-  update(paddleX, paddleY, state, impactEffect) {
+  update(paddleX, paddleY) {
     if (!this.active) return;
 
     // パドルに追従
@@ -84,36 +79,6 @@ export default class MasterSpark {
     if (this.currentFrame <= 0) {
       this.active = false;
       return;
-    }
-
-    // ビーム領域内のブロックを破壊
-    const leftX = this.x - this.beamWidth / 2;
-    const rightX = this.x + this.beamWidth / 2;
-
-    for (const brick of state.bricks) {
-      if (brick.hit) continue;
-
-      // ブロックがビームの横幅内に存在するか判定
-      const brickRight = brick.x + brick.w;
-      const brickBottom = brick.y + brick.h;
-
-      if (
-        brickRight >= leftX &&
-        brick.x <= rightX &&
-        brickBottom <= this.y
-      ) {
-        brick.destroy();
-        state.score += 10;
-
-        if (this.killBrickSE) {
-          this.killBrickSE.play();
-        }
-
-        // destroyedInThisFrame++;
-        if (impactEffect) {
-          impactEffect.trigger();
-        }
-      }
     }
 
     // 星エフェクトの更新
@@ -127,6 +92,21 @@ export default class MasterSpark {
   }
 
   /**
+   * 衝突判定用の現在のビーム攻撃領域（AABB）を取得します
+   * @returns {{ leftX: number, rightX: number, topY: number, bottomY: number } | null}
+   */
+  getArea() {
+    if (!this.active) return null;
+
+    return {
+      leftX: this.x - this.beamWidth / 2,
+      rightX: this.x + this.beamWidth / 2,
+      topY: 0,
+      bottomY: this.y
+    };
+  }
+
+  /**
    * 圧倒的な極太ビームと光彩を描画します
    */
   draw() {
@@ -135,11 +115,10 @@ export default class MasterSpark {
     const p = this.p;
 
     p.push();
-    // 加算合成で発光感を演出
     p.blendMode(p.ADD);
     p.noStroke();
 
-    // 時間経過に応じたビームの太さの拡縮(出現と消滅時にアニメーション)
+    // 時間経過に応じたビームの太さの拡縮
     const progress = this.currentFrame / this.duration;
     let scale = 1;
     if (progress > 0.8) {
@@ -150,7 +129,7 @@ export default class MasterSpark {
 
     const currentWidth = this.beamWidth * scale;
 
-    // 1. 外側の虹色・オーラ(レイヤー重ね描画)
+    // 1. 外側のオーラ
     const layers = [
       { w: currentWidth * 1.4, color: p.color(255, 0, 128, 50) },
       { w: currentWidth * 1.2, color: p.color(0, 200, 255, 80) },
@@ -163,7 +142,7 @@ export default class MasterSpark {
       p.rect(this.x - layer.w / 2, 0, layer.w, this.y);
     }
 
-    // 2. 発射口周辺の強烈なフラッシュ
+    // 2. 発射口周辺のフラッシュ
     p.fill(255, 255, 200, 220);
     p.ellipse(this.x, this.y, currentWidth * 1.8, currentWidth * 0.8);
 

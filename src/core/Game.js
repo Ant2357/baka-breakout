@@ -23,6 +23,7 @@ import MasterSpark from "../effects/MasterSpark";
  * @property {GameState} state ゲームの状態
  * @property {Renderer} renderer ゲーム画面を描画するサービス
  * @property {ImpactLineEffect} impactEffect 衝突エフェクト
+ * @property {MasterSpark} masterSpark マスタースパークのエフェクト
  * @property {CollisionService} collision 衝突判定を行うサービス
  * @property {Paddle} paddle パドル
  * @property {boolean} isKeyboardUsed キーボード入力が使用されているかどうか
@@ -46,7 +47,7 @@ export default class Game {
 
     this.impactEffect = new ImpactLineEffect(p);
 
-    this.masterSpark = new MasterSpark(p, masterSparkSE, screamSE);
+    this.masterSpark = new MasterSpark(p, masterSparkSE);
 
     this.collision = new CollisionService(
       p,
@@ -132,7 +133,6 @@ export default class Game {
     );
   }
 
-
   /**
    * キー入力状態をチェックし、パドルを移動させます。
    * 
@@ -192,12 +192,14 @@ export default class Game {
     // パドルのキー入力を反映
     this.handleInput();
 
+    // マスタースパークの状態・タイマー更新
     this.masterSpark.update(
       this.paddle.x,
-      this.paddle.y,
-      this.state,
-      this.impactEffect
+      this.paddle.y
     );
+
+    // マスタースパークとブロックの衝突判定
+    this.collision.handleMasterSpark(this.masterSpark);
 
     for (const brick of this.state.bricks) {
       brick.escape(
@@ -262,9 +264,6 @@ export default class Game {
   /**
    * マウスクリック時の処理を行います。
    *
-   * タイトル画面の開始、ゲームオーバー後のリセット、
-   * または新しいボールの発射を行います。
-   *
    * @param {number} x マウスのX座標
    * @param {number} y マウスのY座標
    * @returns {void}
@@ -289,8 +288,6 @@ export default class Game {
   /**
    * キー入力時の処理を行います。
    *
-   * Rキーが押された場合はゲームをリセットします。
-   *
    * @param {string} key 押されたキー
    * @returns {void}
    */
@@ -306,9 +303,6 @@ export default class Game {
 
   /**
    * キャンバスサイズ変更時の処理を行います。
-   *
-   * キャンバスサイズを更新し、
-   * パドル位置とブロック配置を再生成します。
    *
    * @param {number} width 新しいキャンバス幅
    * @param {number} height 新しいキャンバス高さ
