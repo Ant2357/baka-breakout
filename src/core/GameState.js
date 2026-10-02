@@ -22,7 +22,7 @@ export default class GameState {
     this.balls = [];
     this.bricks = [];
     this.score = 0;
-    this.lives = 3;
+    this.lives = 1;
     this.title = true;
     this.gameOver = false;
     this.cleared = false;
