@@ -41,7 +41,7 @@ export default class GameState {
     this.bricks = [];
 
     this.score = 0;
-    this.lives = 3;
+    this.lives = 1;
 
     this.title = false;
     this.gameOver = false;
