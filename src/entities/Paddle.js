@@ -97,4 +97,28 @@ export default class Paddle {
       Math.min(mouseX, canvasWidth - half)
     );
   }
+
+  /**
+   * マウスホイールに応じてパドルの幅を変更します。
+   *
+   * @param {number} delta ホイールの回転量
+   * @param {number} canvasWidth キャンバスの幅
+   * @returns {void}
+   */
+  changeWidth(delta, canvasWidth) {
+    // 変化量を決定(上スクロールで拡大、下スクロールで縮小)
+    // ※ デバイスによる delta の値のばらつきを防ぐため、Math.sign で方向のみを取得します。
+    const step = 15; // 1回のスクロールで変動する幅の量
+    const direction = Math.sign(delta); 
+    this.w += -direction * step;
+
+    // パドルの幅の最小値と最大値を制限
+    const minWidth = 40;
+    const maxWidth = canvasWidth;
+    this.w = Math.max(minWidth, Math.min(this.w, maxWidth));
+
+    // 幅が変化したことで壁にめり込まないよう、X座標を補正
+    const half = this.w / 2;
+    this.x = Math.max(half, Math.min(this.x, canvasWidth - half));
+  }
 }

@@ -313,4 +313,19 @@ export default class Game {
     this.paddle.y = height - 44;
     this.createBricks();
   }
+
+  /**
+   * マウスホイール回転時の処理を行います。
+   *
+   * @param {object} event マウスホイールイベント
+   * @returns {void}
+   */
+  mouseWheel(event) {
+    if (!this.state.isPlaying()) {
+      return;
+    }
+
+    // パドルの幅を変更する
+    this.paddle.changeWidth(event.delta, this.p.width);
+  }
 }

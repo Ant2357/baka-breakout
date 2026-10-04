@@ -97,4 +97,16 @@ new p5((p) => {
       p.key
     );
   };
+
+  /**
+   * マウスホイール回転時に呼び出されます。
+   */
+  p.mouseWheel = (event) => {
+    if (game) {
+      game.mouseWheel(event);
+    }
+
+    // true 以外を返してとブラウザ自体のスクロールを無効化する。
+    return false;
+  };
 });
