@@ -29,9 +29,10 @@ export default class Renderer {
    * @param {GameState} state ゲームの状態
    * @param {Paddle} paddle プレイヤーのパドル
    * @param {ImpactLineEffect} impactEffect 衝突エフェクト
+   * @param {BossSpawnEffect} bossSpawnEffect ボス出現エフェクト
    * @returns {void}
    */
-  draw(state, paddle, impactEffect) {
+  draw(state, paddle, impactEffect, bossSpawnEffect, bossExplosionEffect, paddleHitEffect) {
     this.drawBackground();
 
     this.drawHUD(state);
@@ -39,7 +40,14 @@ export default class Renderer {
     this.drawPaddle(paddle);
     this.drawBalls(state.balls);
 
+    this.drawBoss(state.boss);
+    this.drawBossBullets(state.bossBullets);
+    this.drawBossHP(state.boss);
+
     impactEffect.draw();
+    if (bossSpawnEffect) bossSpawnEffect.draw();
+    if (bossExplosionEffect) bossExplosionEffect.draw();
+    if (paddleHitEffect) paddleHitEffect.draw();
 
     if (state.title) {
       this.drawTitle();
@@ -366,5 +374,95 @@ export default class Renderer {
     );
 
     this.shareButton.show();
+  }
+
+  /**
+   * 三角形のボスキャラを描画します。
+   * @param {Boss} boss 
+   */
+  drawBoss(boss) {
+    if (!boss || !boss.alive) return;
+    const p = this.p;
+
+    p.push();
+    p.noStroke();
+    p.fill(239, 68, 68); // 赤色の三角形
+
+    // 三角形の頂点計算 (上頂点、左下、右下)
+    const x = boss.x;
+    const y = boss.y;
+    const w = boss.w;
+    const h = boss.h;
+
+    p.triangle(
+      x, y - h / 2,         // 上
+      x - w / 2, y + h / 2, // 左下
+      x + w / 2, y + h / 2  // 右下
+    );
+
+    // ボスの目玉やコアのアクセント
+    p.fill(255, 255, 255);
+    p.ellipse(x, y, 20, 20);
+    p.fill(0);
+    p.ellipse(x, y, 8, 8);
+
+    p.pop();
+  }
+
+  /**
+   * ボスの放つ小さい三角形の弾を描画します。
+   * @param {BossBullet[]} bullets 
+   */
+  drawBossBullets(bullets) {
+    const p = this.p;
+    p.push();
+    p.noStroke();
+    p.fill(244, 63, 94);
+
+    for (const b of bullets) {
+      if (!b.alive) continue;
+      // 下向きの小さい三角形
+      p.triangle(
+        b.x, b.y + b.size / 2,
+        b.x - b.size / 2, b.y - b.size / 2,
+        b.x + b.size / 2, b.y - b.size / 2
+      );
+    }
+    p.pop();
+  }
+
+  /**
+   * 画面上部にボスのHPゲージを描画します。
+   * @param {Boss} boss 
+   */
+  drawBossHP(boss) {
+    if (!boss || !boss.alive) return;
+    const p = this.p;
+
+    p.push();
+    const barWidth = 300;
+    const barHeight = 16;
+    const barX = p.width / 2 - barWidth / 2;
+    const barY = 20;
+
+    // 背景枠
+    p.fill(30, 41, 59, 200);
+    p.stroke(148, 163, 184);
+    p.strokeWeight(2);
+    p.rect(barX, barY, barWidth, barHeight, 4);
+
+    // 現在HPバー
+    const hpRatio = Math.max(0, boss.hp / boss.maxHp);
+    p.noStroke();
+    p.fill(239, 68, 68);
+    p.rect(barX + 2, barY + 2, (barWidth - 4) * hpRatio, barHeight - 4, 2);
+
+    // ラベル
+    p.fill(255);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(12);
+    p.text(`BOSS HP: ${boss.hp} / ${boss.maxHp}`, p.width / 2, barY + barHeight / 2);
+
+    p.pop();
   }
 }

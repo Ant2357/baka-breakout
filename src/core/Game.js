@@ -2,6 +2,11 @@ import GameState from "./GameState";
 import Ball from "../entities/Ball";
 import Paddle from "../entities/Paddle";
 
+import Boss from "../entities/Boss";
+import BossSpawnEffect from "../effects/BossSpawnEffect";
+import BossExplosionEffect from "../effects/BossExplosionEffect";
+import PaddleHitEffect from "../effects/PaddleHitEffect";
+
 import BrickFactory from "../factories/BrickFactory";
 
 import CollisionService from "../services/CollisionService";
@@ -23,6 +28,9 @@ import MasterSpark from "../effects/MasterSpark";
  * @property {GameState} state ゲームの状態
  * @property {Renderer} renderer ゲーム画面を描画するサービス
  * @property {ImpactLineEffect} impactEffect 衝突エフェクト
+ * @property {BossSpawnEffect} bossSpawnEffect ボス出現エフェクト
+ * @property {BossExplosionEffect} BossExplosionEffect ボス爆発エフェクト
+ * @property {PaddleHitEffect} PaddleHitEffect パドル被弾エフェクト
  * @property {MasterSpark} masterSpark マスタースパークのエフェクト
  * @property {CollisionService} collision 衝突判定を行うサービス
  * @property {Paddle} paddle パドル
@@ -47,13 +55,19 @@ export default class Game {
 
     this.impactEffect = new ImpactLineEffect(p);
 
+    this.bossSpawnEffect = new BossSpawnEffect(p);
+    this.BossExplosionEffect = new BossExplosionEffect(p);
+    this.PaddleHitEffect = new PaddleHitEffect(p);
+
     this.masterSpark = new MasterSpark(p, masterSparkSE);
 
     this.collision = new CollisionService(
       p,
       this.state,
       screamSE,
-      this.impactEffect
+      this.impactEffect,
+      this.BossExplosionEffect,
+      this.PaddleHitEffect
     );
 
     this.paddle = new Paddle(
@@ -198,8 +212,11 @@ export default class Game {
       this.paddle.y
     );
 
-    // マスタースパークとブロックの衝突判定
+    // マスタースパークの衝突判定
     this.collision.handleMasterSpark(this.masterSpark);
+    if (this.state.boss && this.state.boss.alive) {
+      this.collision.handleMasterSparkBoss(this.masterSpark, this.state.boss);
+    }
 
     for (const brick of this.state.bricks) {
       brick.escape(
@@ -214,6 +231,23 @@ export default class Game {
       this.collision.handle(ball, this.paddle);
     }
 
+
+    // ボスの更新と弾の処理
+    if (this.state.boss && this.state.boss.alive) {
+      const shouldShoot = this.state.boss.update(this.p.width);
+      if (shouldShoot) {
+        this.state.bossBullets.push(this.state.boss.createBullet());
+      }
+      this.collision.handleBoss(this.state.boss, this.state.balls);
+    }
+
+    for (const bullet of this.state.bossBullets) {
+      bullet.update();
+      this.collision.handleBossBullet(bullet, this.paddle);
+    }
+    this.state.removeDeadBossBullets();
+
+
     this.state.removeDeadBalls();
 
     if (this.state.balls.length === 0) {
@@ -225,6 +259,9 @@ export default class Game {
     }
 
     this.impactEffect.update();
+    this.bossSpawnEffect.update();
+    this.BossExplosionEffect.update();
+    this.PaddleHitEffect.update();
 
     this.state.checkClear();
   }
@@ -238,7 +275,10 @@ export default class Game {
     this.renderer.draw(
       this.state,
       this.paddle,
-      this.impactEffect
+      this.impactEffect,
+      this.bossSpawnEffect,
+      this.BossExplosionEffect,
+      this.PaddleHitEffect
     );
 
     this.masterSpark.draw();
@@ -298,6 +338,12 @@ export default class Game {
 
     if ((key === "m" || key === "M") && this.state.isPlaying()) {
       this.masterSpark.trigger(this.paddle.x, this.paddle.y);
+    }
+
+    // Bキーでボスを召喚
+    if ((key === "b" || key === "B") && this.state.isPlaying() && !this.state.boss) {
+      this.state.boss = new Boss(this.p, this.p.width);
+      this.bossSpawnEffect.trigger();
     }
   }
 

@@ -8,6 +8,8 @@
  * @exports GameState
  * @property {Ball[]} balls ボールの一覧
  * @property {Brick[]} bricks ブロックの一覧
+ * @property {Boss} boss ボスキャラ
+ * @property {BossBullet[]} bossBullets ボスの弾一覧
  * @property {number} score 現在のスコア
  * @property {number} lives 残りライフ数
  * @property {boolean} title 現在タイトル画面かどうか
@@ -21,8 +23,10 @@ export default class GameState {
   constructor() {
     this.balls = [];
     this.bricks = [];
+    this.boss = null;
+    this.bossBullets = [];
     this.score = 0;
-    this.lives = 1;
+    this.lives = 3;
     this.title = true;
     this.gameOver = false;
     this.cleared = false;
@@ -39,9 +43,11 @@ export default class GameState {
   reset() {
     this.balls = [];
     this.bricks = [];
+    this.boss = null;
+    this.bossBullets = [];
 
     this.score = 0;
-    this.lives = 1;
+    this.lives = 3;
 
     this.title = false;
     this.gameOver = false;
@@ -65,6 +71,13 @@ export default class GameState {
    */
   removeDeadBalls() {
     this.balls = this.balls.filter(ball => ball.alive);
+  }
+
+  /**
+   * 死亡したボスの弾をボス弾一覧から削除します。
+   */
+  removeDeadBossBullets() {
+    this.bossBullets = this.bossBullets.filter(b => b.alive);
   }
 
   /**
@@ -102,6 +115,9 @@ export default class GameState {
    * @returns {void}
    */
   checkClear() {
-    this.cleared = this.bricks.every(brick => brick.hit);
+    // すべてのブロックが破壊され、かつボスを倒している(またはボスがいない)場合にクリア
+    const bricksCleared = this.bricks.every(brick => brick.hit);
+    const bossCleared = !this.boss || !this.boss.alive;
+    this.cleared = bricksCleared && bossCleared;
   }
 }
