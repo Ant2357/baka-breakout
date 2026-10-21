@@ -3,6 +3,12 @@
  * 
  * @class
  * @exports PaddleHitEffect
+ * @property {p5} p p5.js インスタンス
+ * @property {boolean} active エフェクトがアクティブかどうか
+ * @property {number} duration エフェクトの持続時間
+ * @property {number} currentFrame 現在のフレーム数
+ * @property {number} x 被弾地点X
+ * @property {number} y 被弾地点Y
  */
 export default class PaddleHitEffect {
   /**

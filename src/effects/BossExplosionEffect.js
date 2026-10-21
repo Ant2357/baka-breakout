@@ -3,6 +3,11 @@
  * 
  * @class
  * @exports BossExplosionEffect
+ * @property {p5} p p5.js インスタンス
+ * @property {Array} particles 爆発パーティクルの配列
+ * @property {boolean} active エフェクトがアクティブかどうか
+ * @property {number} duration エフェクトの持続時間
+ * @property {number} currentFrame 現在のフレーム数
  */
 export default class BossExplosionEffect {
   /**

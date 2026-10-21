@@ -10,6 +10,8 @@
  * @property {GameState} state ゲームの状態
  * @property {SoundEffectService} audio 効果音を再生するサービス
  * @property {ImpactLineEffect} impactEffect 衝突エフェクト
+ * @property {BossExplosionEffect} bossExplosionEffect ボス爆発エフェクト
+ * @property {PaddleHitEffect} paddleHitEffect パドル被弾エフェクト
  */
 export default class CollisionService {
 

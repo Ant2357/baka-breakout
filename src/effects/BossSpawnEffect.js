@@ -3,6 +3,10 @@
  * 
  * @class
  * @exports BossSpawnEffect
+ * @property {p5} p p5.js インスタンス
+ * @property {boolean} active エフェクトがアクティブかどうか
+ * @property {number} duration エフェクトの持続時間
+ * @property {number} currentFrame 現在のフレーム数
  */
 export default class BossSpawnEffect {
   /**

@@ -5,6 +5,16 @@ import BossBullet from "./BossBullet";
  * 
  * @class
  * @exports Boss
+ * @property {p5} p p5.js インスタンス
+ * @property {number} x X座標
+ * @property {number} y Y座標
+ * @property {number} w 幅
+ * @property {number} h 高さ
+ * @property {number} maxHp 最大HP
+ * @property {number} hp 現在のHP
+ * @property {boolean} alive 生存状態
+ * @property {number} vx X方向の速度
+ * @property {number} shootTimer 弾を発射するまでのタイマー
  */
 export default class Boss {
   /**
@@ -17,7 +27,7 @@ export default class Boss {
     this.y = 110;
     this.w = 120;
     this.h = 90;
-    this.maxHp = 400;
+    this.maxHp = 800;
     this.hp = this.maxHp;
     this.alive = true;
 

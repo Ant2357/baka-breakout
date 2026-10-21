@@ -3,6 +3,12 @@
  * 
  * @class
  * @exports BossBullet
+ * @property {number} x 生成X座標
+ * @property {number} y 生成Y座標
+ * @property {number} vx X方向速度
+ * @property {number} vy Y方向速度
+ * @property {number} size 弾のサイズ
+ * @property {boolean} alive 生存状態
  */
 export default class BossBullet {
   /**
@@ -17,7 +23,6 @@ export default class BossBullet {
     this.vx = vx;
     this.vy = vy;
     this.size = 500;
-    // this.size = 96;
     this.alive = true;
   }
 
