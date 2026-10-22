@@ -95,12 +95,13 @@ export default class Renderer {
     const text = [
       "クリックでボール発射 / Rでリスタート",
       "Mキーでめっちゃ凄いレーザービーム発射",
+      "Bキーでボス出現",
     ].join("\n");
 
     p.text(
       text,
       20,
-      p.height - 60
+      p.height - 90
     );
   }
 
