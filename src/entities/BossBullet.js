@@ -12,6 +12,8 @@
  */
 export default class BossBullet {
   /**
+   * BossBullet Constructor
+   * 
    * @param {number} x 生成X座標
    * @param {number} y 生成Y座標
    * @param {number} vx X方向速度

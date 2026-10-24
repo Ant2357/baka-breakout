@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>effects/BossExplosionEffect.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BGMService.html">BGMService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BGMService.html#pause">pause</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#resume">resume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#setVolume">setVolume</a></li><li data-type='method' style='display: none;'><a href="module-BGMService.html#stop">stop</a></li></ul></li><li><a href="module-Ball.html">Ball</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Ball.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseX">reverseX</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#reverseY">reverseY</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#setVelocity">setVelocity</a></li><li data-type='method' style='display: none;'><a href="module-Ball.html#update">update</a></li></ul></li><li><a href="module-Boss.html">Boss</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Boss.html#createBullet">createBullet</a></li><li data-type='method' style='display: none;'><a href="module-Boss.html#damage">damage</a></li><li data-type='method' style='display: none;'><a href="module-Boss.html#update">update</a></li></ul></li><li><a href="module-BossBullet.html">BossBullet</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BossBullet.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-BossBullet.html#update">update</a></li></ul></li><li><a href="module-BossExplosionEffect.html">BossExplosionEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BossExplosionEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-BossExplosionEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-BossExplosionEffect.html#update">update</a></li></ul></li><li><a href="module-BossSpawnEffect.html">BossSpawnEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BossSpawnEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-BossSpawnEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-BossSpawnEffect.html#update">update</a></li></ul></li><li><a href="module-Brick.html">Brick</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Brick.html#destroy">destroy</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#escape">escape</a></li><li data-type='method' style='display: none;'><a href="module-Brick.html#isAlive">isAlive</a></li></ul></li><li><a href="module-BrickFactory.html">BrickFactory</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-BrickFactory.html#.create">create</a></li></ul></li><li><a href="module-CollisionService.html">CollisionService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handle">handle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBoss">handleBoss</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBossBullet">handleBossBullet</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleBricks">handleBricks</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleMasterSpark">handleMasterSpark</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleMasterSparkBoss">handleMasterSparkBoss</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handlePaddle">handlePaddle</a></li><li data-type='method' style='display: none;'><a href="module-CollisionService.html#handleWall">handleWall</a></li></ul></li><li><a href="module-Game.html">Game</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Game.html#createBricks">createBricks</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#handleInput">handleInput</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#keyPressed">keyPressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseMoved">mouseMoved</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mousePressed">mousePressed</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#mouseWheel">mouseWheel</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#reset">reset</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#resize">resize</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#spawnBall">spawnBall</a></li><li data-type='method' style='display: none;'><a href="module-Game.html#update">update</a></li></ul></li><li><a href="module-GameState.html">GameState</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GameState.html#addBall">addBall</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#checkClear">checkClear</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#isPlaying">isPlaying</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#loseLife">loseLife</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBalls">removeDeadBalls</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#removeDeadBossBullets">removeDeadBossBullets</a></li><li data-type='method' style='display: none;'><a href="module-GameState.html#reset">reset</a></li></ul></li><li><a href="module-ImpactLineEffect.html">ImpactLineEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-ImpactLineEffect.html#update">update</a></li></ul></li><li><a href="module-MasterSpark.html">MasterSpark</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-MasterSpark.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-MasterSpark.html#getArea">getArea</a></li><li data-type='method' style='display: none;'><a href="module-MasterSpark.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-MasterSpark.html#update">update</a></li></ul></li><li><a href="module-Paddle.html">Paddle</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Paddle.html#changeWidth">changeWidth</a></li><li data-type='method' style='display: none;'><a href="module-Paddle.html#move">move</a></li><li data-type='method' style='display: none;'><a href="module-Paddle.html#moveTo">moveTo</a></li></ul></li><li><a href="module-PaddleHitEffect.html">PaddleHitEffect</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-PaddleHitEffect.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-PaddleHitEffect.html#trigger">trigger</a></li><li data-type='method' style='display: none;'><a href="module-PaddleHitEffect.html#update">update</a></li></ul></li><li><a href="module-Renderer.html">Renderer</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-Renderer.html#draw">draw</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBackground">drawBackground</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBalls">drawBalls</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBoss">drawBoss</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBossBullets">drawBossBullets</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBossHP">drawBossHP</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawBricks">drawBricks</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawHUD">drawHUD</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawPaddle">drawPaddle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawResult">drawResult</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawSpeedLines">drawSpeedLines</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#drawTitle">drawTitle</a></li><li data-type='method' style='display: none;'><a href="module-Renderer.html#updateShareButton">updateShareButton</a></li></ul></li><li><a href="module-SoundEffectService.html">SoundEffectService</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#load">load</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#play">play</a></li><li data-type='method' style='display: none;'><a href="module-SoundEffectService.html#resumeContext">resumeContext</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">effects/BossExplosionEffect.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * ボス撃破時の爆発エフェクトクラス。
+ * 
+ * @class
+ * @exports BossExplosionEffect
+ * @property {p5} p p5.js インスタンス
+ * @property {Array} particles 爆発パーティクルの配列
+ * @property {boolean} active エフェクトがアクティブかどうか
+ * @property {number} duration エフェクトの持続時間
+ * @property {number} currentFrame 現在のフレーム数
+ */
+export default class BossExplosionEffect {
+  /**
+   * BossExplosionEffect Constructor
+   * 
+   * @param {p5} p p5.js インスタンス
+   */
+  constructor(p) {
+    this.p = p;
+    this.particles = [];
+    this.active = false;
+    this.duration = 60;
+    this.currentFrame = 0;
+  }
+
+  /**
+   * 爆発エフェクトを発動します。
+   * 
+   * @param {number} x 爆発の中心X
+   * @param {number} y 爆発の中心Y
+   */
+  trigger(x, y) {
+    this.active = true;
+    this.currentFrame = this.duration;
+    this.particles = [];
+
+    // 破片パーティクルを多数生成
+    for (let i = 0; i &lt; 40; i++) {
+      const angle = this.p.random(this.p.TWO_PI);
+      const speed = this.p.random(2, 12);
+      this.particles.push({
+        x: x,
+        y: y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        size: this.p.random(6, 18),
+        color: this.p.color(
+          255,
+          this.p.random(50, 180),
+          this.p.random(0, 100)
+        )
+      });
+    }
+  }
+
+  /**
+   * パーティクルの更新処理。
+   */
+  update() {
+    if (!this.active) return;
+
+    this.currentFrame--;
+    if (this.currentFrame &lt;= 0) {
+      this.active = false;
+      return;
+    }
+
+    for (const part of this.particles) {
+      part.x += part.vx;
+      part.y += part.vy;
+      part.vx *= 0.96; // 減速
+      part.vy *= 0.96;
+    }
+  }
+
+  /**
+   * 爆発エフェクトを描画します。
+   */
+  draw() {
+    if (!this.active) return;
+    const p = this.p;
+
+    p.push();
+    p.noStroke();
+
+    // 撃破瞬間のホワイトフラッシュ
+    if (this.currentFrame > this.duration - 10) {
+      p.fill(255, 255, 255, 180);
+      p.rect(0, 0, p.width, p.height);
+    }
+
+    // 粒子描画
+    const progress = this.currentFrame / this.duration;
+    for (const part of this.particles) {
+      p.fill(part.color);
+      p.ellipse(part.x, part.y, part.size * progress);
+    }
+
+    p.pop();
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Sat Oct 24 2026 20:13:41 GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

@@ -11,6 +11,8 @@
  */
 export default class BossExplosionEffect {
   /**
+   * BossExplosionEffect Constructor
+   * 
    * @param {p5} p p5.js インスタンス
    */
   constructor(p) {

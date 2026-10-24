@@ -18,6 +18,8 @@ import BossBullet from "./BossBullet";
  */
 export default class Boss {
   /**
+   * Boss Constructor
+   * 
    * @param {p5} p p5.js インスタンス
    * @param {number} canvasWidth キャンバスの幅
    */

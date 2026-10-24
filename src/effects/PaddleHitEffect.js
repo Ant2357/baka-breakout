@@ -12,6 +12,8 @@
  */
 export default class PaddleHitEffect {
   /**
+   * PaddleHitEffect Constructor
+   * 
    * @param {p5} p p5.js インスタンス
    */
   constructor(p) {
