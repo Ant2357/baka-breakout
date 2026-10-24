@@ -24,7 +24,7 @@ export default class BossBullet {
     this.y = y;
     this.vx = vx;
     this.vy = vy;
-    this.size = 500;
+    this.size = 600;
     this.alive = true;
   }
 
